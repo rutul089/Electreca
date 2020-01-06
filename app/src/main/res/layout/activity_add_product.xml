@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBG"
+    android:orientation="vertical"
+    tools:context=".activity.AddProductActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_15">
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvProjectName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_24"
+                android:text="@string/hintProjectName"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_project_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvProjectName"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvLocationName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintLocationName"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_project_name"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_location_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocationName"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvProductID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintProductId"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_location_name"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_product_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductID"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvCategoryID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintCategory"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_product_id"
+                app:myFont="@string/REGULAR" />
+
+            <Spinner
+                android:id="@+id/sp_category"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/gray_stroke"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvCategoryID" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintCity"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/sp_category"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_city"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvCity"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintState"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_city"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_state"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvState"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintLocation"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_state"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_location"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvNotes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/hintNotes"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_location"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_notes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="@dimen/dimen_2"
+                android:lines="3"
+                android:maxLines="4"
+                android:gravity="top"
+                android:paddingTop="@dimen/dimen_3"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvNotes"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomButton
+                android:id="@+id/btn_add_device"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_25"
+                android:background="@drawable/blue_rounded_bg"
+                android:text="@string/btn_add_location"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/et_notes"
+                app:myFont="@string/MEDIUM" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

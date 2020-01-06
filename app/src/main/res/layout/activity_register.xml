@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context=".activity.RegisterActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_10">
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_emp_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_150px"
+                android:layout_margin="@dimen/dimen_22"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:maxLines="1"
+                android:imeOptions="actionNext"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_user"
+                android:drawablePadding="@dimen/dimen_15"
+                android:hint="@string/hintName"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/text"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:myFont="@string/LIGHT" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_phone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_mobile"
+                android:drawablePadding="@dimen/dimen_15"
+                android:hint="@string/hintPhoneNumber"
+                android:inputType="phone"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/text"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/et_emp_name"
+                app:layout_constraintStart_toStartOf="@+id/et_emp_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_emp_name"
+                app:myFont="@string/LIGHT" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/dimen_15"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/text"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/et_emp_name"
+                app:layout_constraintStart_toStartOf="@+id/et_emp_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_phone"
+                app:myFont="@string/LIGHT" />
+
+            <Spinner
+                android:id="@+id/sp_role"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/gray_stroke"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="@+id/et_emp_name"
+                app:layout_constraintStart_toStartOf="@+id/et_emp_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_pwd"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_pwd"
+                android:drawablePadding="@dimen/dimen_15"
+                android:hint="@string/hint_pwd"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/text"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/et_emp_name"
+                app:layout_constraintStart_toStartOf="@+id/et_emp_name"
+                app:layout_constraintTop_toBottomOf="@+id/sp_role"
+                app:myFont="@string/LIGHT" />
+
+            <com.electreca.tech.components.CustomButton
+                android:id="@+id/btn_signup"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_25"
+                android:background="@drawable/blue_rounded_bg"
+                android:text="@string/btn_signup"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/et_emp_name"
+                app:layout_constraintStart_toStartOf="@+id/et_emp_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_pwd"
+                app:myFont="@string/MEDIUM" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

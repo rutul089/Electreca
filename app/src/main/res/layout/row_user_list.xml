@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10"
+    android:background="@drawable/gray_stroke"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/ib_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_edit"
+        android:tint="@color/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_emp_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10"
+        android:text="Steve Rogers"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toStartOf="@+id/ib_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:myFont="@string/REGULAR" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:text="+91-985-5553-817"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="@+id/tv_emp_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_emp_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emp_name"
+        app:myFont="@string/REGULAR" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_designation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:text="Technician"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="@+id/tv_emp_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_emp_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+        app:myFont="@string/MEDIUM" />
+
+    <ImageView
+        android:id="@+id/iv_phone"
+        android:layout_width="@dimen/dimen_32"
+        android:layout_height="@dimen/dimen_32"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:src="@drawable/ic_phone_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_designation"
+        app:layout_constraintTop_toBottomOf="@+id/tv_designation" />
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="@dimen/dimen_32"
+        android:layout_height="@dimen/dimen_32"
+        android:layout_marginStart="@dimen/dimen_12"
+        android:src="@drawable/ic_share_round"
+        app:layout_constraintBottom_toTopOf="@+id/iv_phone"
+        app:layout_constraintStart_toEndOf="@+id/iv_phone"
+        app:layout_constraintTop_toBottomOf="@+id/iv_phone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

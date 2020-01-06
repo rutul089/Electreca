@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_10"
+    android:layout_marginTop="@dimen/dimen_5"
+    android:layout_marginEnd="@dimen/dimen_10"
+    android:elevation="@dimen/dimen_3"
+    android:layout_marginBottom="@dimen/dimen_5"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/dimen_10">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_project_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:layout_marginEnd="@dimen/dimen_10"
+            android:text="ONGC Project"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/dimen_90px"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:myFont="@string/SEMI_BOLD" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tvProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/tv_product_name"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/tv_project_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_project_name"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:text="CHC Hospotal"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/tvProductName"
+            app:layout_constraintEnd_toEndOf="@+id/tv_project_name"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tvInstalledDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/tv_installed_date"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/tvProductName"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_installed_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:text="10 Dec 2019 | 21 : 00"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/tvInstalledDate"
+            app:layout_constraintEnd_toEndOf="@+id/tv_product_name"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvInstalledDate" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tvProductId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/tv_product_id"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/tvInstalledDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvInstalledDate"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_product_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:text="19213JAQL"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/tvProductId"
+            app:layout_constraintEnd_toEndOf="@+id/tv_installed_date"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductId" />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@color/colorDivider"
+            app:layout_constraintEnd_toEndOf="@+id/tv_project_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_project_name"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductId" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tvInstalledBy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/tv_installed_by"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/view_divider"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_installed_by"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:text="John Doe"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/tvInstalledBy"
+            app:layout_constraintEnd_toEndOf="@+id/tv_installed_date"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvInstalledBy" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/tv_address"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/tvInstalledBy"
+            app:layout_constraintTop_toBottomOf="@+id/tvInstalledBy"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:text="Ahmedabad , Gujarat"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/tvAddress"
+            app:layout_constraintEnd_toEndOf="@+id/tv_installed_date"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tvStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_3"
+            android:text="@string/tv_status"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintEnd_toStartOf="@+id/guideline1"
+            app:layout_constraintStart_toStartOf="@+id/tvAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_5"
+            android:text="Active"
+            android:textColor="@color/colorActive"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+            app:layout_constraintEnd_toEndOf="@+id/tv_installed_date"
+            app:layout_constraintStart_toStartOf="@+id/guideline1"
+            app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+        <View
+            android:id="@+id/view_divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@color/colorDivider"
+            app:layout_constraintEnd_toEndOf="@+id/tv_project_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_project_name"
+            app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:layout_marginBottom="@dimen/dimen_10"
+            android:src="@drawable/ic_phone_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvStatus"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider2" />
+
+        <ImageView
+            android:id="@+id/iv_direction"
+            android:layout_width="@dimen/dimen_32"
+            android:layout_height="@dimen/dimen_32"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:src="@drawable/ic_location"
+            app:layout_constraintBottom_toTopOf="@+id/iv_phone"
+            app:layout_constraintStart_toEndOf="@+id/iv_phone"
+            app:layout_constraintTop_toBottomOf="@+id/iv_phone" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_product_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_product_history"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/dimen_64px"
+            app:layout_constraintBottom_toTopOf="@+id/iv_direction"
+            app:layout_constraintEnd_toEndOf="@+id/tv_status"
+            app:layout_constraintTop_toBottomOf="@+id/iv_direction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

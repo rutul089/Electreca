@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".activity.AboutUsActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingBottom="@dimen/dimen_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.electreca.tech.components.CustomTextView
+                android:layout_marginTop="@dimen/dimen_10"
+                android:id="@+id/tv_tittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:text="@string/tvAboutUs"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_90px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:myFont="@string/MEDIUM" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/customTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:lineSpacingExtra="@dimen/dimen_2"
+                android:text="@string/dummy_text"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_tittle"
+                app:layout_constraintStart_toStartOf="@+id/tv_tittle"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tittle"
+                app:myFont="@string/REGULAR" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:background="@color/colorDivider"
+                app:layout_constraintEnd_toEndOf="@+id/tv_tittle"
+                app:layout_constraintStart_toStartOf="@+id/tv_tittle"
+                app:layout_constraintTop_toBottomOf="@+id/customTextView" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tv_contact_us"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:text="@string/tvContactUs"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_90px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_tittle"
+                app:layout_constraintStart_toStartOf="@+id/tv_tittle"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:myFont="@string/MEDIUM" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tv_website"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_link"
+                android:drawablePadding="@dimen/dimen_10"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dimen_8"
+                android:paddingEnd="@dimen/dimen_8"
+                android:text="@string/tvWebsiteLink"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_70px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_contact_us"
+                app:layout_constraintStart_toStartOf="@+id/tv_contact_us"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contact_us" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tv_feedback"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/dimen_10"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dimen_8"
+                android:paddingEnd="@dimen/dimen_8"
+                android:text="@string/tvFeedback"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_70px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_contact_us"
+                app:layout_constraintStart_toStartOf="@+id/tv_contact_us"
+                app:layout_constraintTop_toBottomOf="@+id/tv_website" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tv_call"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_12"
+                android:background="@drawable/gray_stroke"
+                android:drawableStart="@drawable/ic_mobile"
+                android:drawablePadding="@dimen/dimen_10"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dimen_8"
+                android:paddingEnd="@dimen/dimen_8"
+                android:text="@string/tvMobile"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_70px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_contact_us"
+                app:layout_constraintStart_toStartOf="@+id/tv_contact_us"
+                app:layout_constraintTop_toBottomOf="@+id/tv_feedback" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>

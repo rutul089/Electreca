@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="header">48dp</dimen>
+
+    <dimen name="search_view">@dimen/_35sdp</dimen>
+    <dimen name="search_image_view">@dimen/_20sdp</dimen>
+
+
+</resources>

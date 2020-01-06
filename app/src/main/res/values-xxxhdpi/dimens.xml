@@ -1,0 +1,90 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="fab_margin">@dimen/dimen_16</dimen>
+    <dimen name="nav_drawer_width">304dp</dimen>
+    <dimen name="navDrawer_header_height">170dp</dimen>
+    <dimen name="login_logo_width">@dimen/_130sdp</dimen>
+
+    <dimen name="header">56dp</dimen>
+    <dimen name="search_view">@dimen/_20sdp</dimen>
+    <dimen name="search_image_view">@dimen/_10sdp</dimen>
+
+    <dimen name="header_height">50dp</dimen>
+    <dimen name="dimen_1">@dimen/_1sdp</dimen>
+    <dimen name="dimen_2">@dimen/_2sdp</dimen>
+    <dimen name="dimen_3">@dimen/_3sdp</dimen>
+    <dimen name="dimen_4">@dimen/_4sdp</dimen>
+    <dimen name="dimen_5">@dimen/_5sdp</dimen>
+    <dimen name="dimen_7">@dimen/_7sdp</dimen>
+    <dimen name="dimen_8">@dimen/_8sdp</dimen>
+    <dimen name="dimen_10">@dimen/_10sdp</dimen>
+    <dimen name="dimen_12">@dimen/_12sdp</dimen>
+    <dimen name="dimen_13">@dimen/_13sdp</dimen>
+    <dimen name="dimen_14">@dimen/_14sdp</dimen>
+    <dimen name="dimen_15">@dimen/_15sdp</dimen>
+    <dimen name="dimen_16">@dimen/_16sdp</dimen>
+    <dimen name="dimen_17">@dimen/_17sdp</dimen>
+    <dimen name="dimen_18">@dimen/_18sdp</dimen>
+    <dimen name="dimen_19">@dimen/_19sdp</dimen>
+    <dimen name="dimen_20">@dimen/_20sdp</dimen>
+    <dimen name="dimen_22">@dimen/_22sdp</dimen>
+    <dimen name="dimen_24">@dimen/_24sdp</dimen>
+    <dimen name="dimen_25">@dimen/_25sdp</dimen>
+    <dimen name="dimen_26">@dimen/_26sdp</dimen>
+    <dimen name="dimen_28">@dimen/_28sdp</dimen>
+    <dimen name="dimen_30">@dimen/_30sdp</dimen>
+    <dimen name="dimen_32">@dimen/_32sdp</dimen>
+    <dimen name="dimen_34">@dimen/_34sdp</dimen>
+    <dimen name="dimen_35">@dimen/_35sdp</dimen>
+    <dimen name="dimen_40">@dimen/_40sdp</dimen>
+    <dimen name="dimen_45">@dimen/_45sdp</dimen>
+    <dimen name="dimen_50">@dimen/_50sdp</dimen>
+
+
+    <!--new dimes as per call with KV-->
+    <dimen name="height_1px">0.33dp</dimen>             <!--1.32px-->
+    <dimen name="height_70px">23dp</dimen>              <!--92px-->
+    <dimen name="height_90px">30dp</dimen>              <!--119px-->
+    <dimen name="height_110px">36.25dp</dimen>          <!--145px-->
+    <dimen name="height_150px">50dp</dimen>             <!--198px-->
+    <dimen name="height_180px">59.25dp</dimen>          <!--237px-->
+    <dimen name="height_270px">89dp</dimen>             <!--356px-->
+    <dimen name="height_300px">100dp</dimen>            <!--400px-->
+    <dimen name="height_360px">120dp</dimen>
+    <dimen name="height_tab_layout">@dimen/_50sdp</dimen>
+
+    <!--Font size-->
+    <dimen name="dimen_10px">3sp</dimen>                <!--13px-->
+    <dimen name="dimen_20px">5.20sp</dimen>             <!--26px-->
+    <dimen name="dimen_30px">7.9sp</dimen>              <!--39.6px-->
+    <dimen name="dimen_36px">10sp</dimen>               <!--47.5px-->
+    <dimen name="dimen_39px">10.2sp</dimen>             <!--51.48px-->
+    <dimen name="dimen_40px">10.6sp</dimen>             <!--53px-->
+    <dimen name="dimen_42px">11.2sp</dimen>             <!--55.5px-->
+    <dimen name="dimen_48px">12.60sp</dimen>            <!--63px-->
+    <dimen name="dimen_50px">13.20sp</dimen>            <!--66px-->
+    <dimen name="dimen_54px">14.20sp</dimen>            <!--71px-->
+    <dimen name="dimen_60px">15.80sp</dimen>            <!--79px-->
+    <dimen name="dimen_64px">17sp</dimen>               <!--85pz-->
+    <dimen name="dimen_66px">17.4sp</dimen>             <!--87px-->
+    <dimen name="dimen_70px">18.5sp</dimen>             <!--92px-->
+    <dimen name="dimen_72px">19sp</dimen>               <!--95px-->
+    <dimen name="dimen_75px">19.8sp</dimen>             <!--99px-->
+    <dimen name="dimen_90px">23.8sp</dimen>             <!--118px-->
+    <dimen name="dimen_150px">37.5sp</dimen>            <!--150px-->
+    <dimen name="dimen_160px">40sp</dimen>              <!--160px-->
+    <dimen name="dimen_170px">42.5sp</dimen>            <!--170px-->
+    <dimen name="dimen_180px">45sp</dimen>              <!--180px-->
+
+    <dimen name="nav_header_height">@dimen/_175sdp</dimen>
+
+    <dimen name="def_size_dot_border">1dp</dimen>
+    <dimen name="def_height_separator">3dp</dimen>
+    <dimen name="def_radius_dot">5dp</dimen>
+
+    <dimen name="dimen_nav_menu_text">14.20sp</dimen>
+
+</resources>

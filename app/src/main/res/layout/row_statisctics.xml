@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_135sdp"
+    android:layout_margin="@dimen/dimen_10"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardCornerRadius="@dimen/dimen_10">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_5"
+        android:orientation="vertical">
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_categoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_2"
+            android:gravity="center"
+            android:text="Solar Rooftop"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_75px"
+            app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline"
+            app:layout_constraintEnd_toStartOf="@+id/tvTotalProduct"
+            app:layout_constraintStart_toEndOf="@+id/tvTotalProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalProduct"
+            app:myFont="@string/SEMI_BOLD" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_5">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <LinearLayout
+                android:id="@+id/ll_activePart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/dimen_3"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/vertical_guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.electreca.tech.components.CustomTextView
+                    android:id="@+id/tv_total_activeProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="600"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/dimen_90px"
+                    app:myFont="@string/SEMI_BOLD" />
+
+                <com.electreca.tech.components.CustomTextView
+                    android:id="@+id/tv_active_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/tvActiveProduct"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/dimen_60px"
+                    app:myFont="@string/REGULAR" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_deactivatedPart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/dimen_3"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/vertical_guideline"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.electreca.tech.components.CustomTextView
+                    android:id="@+id/tv_total_deactiveProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="600"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/dimen_90px"
+                    app:myFont="@string/SEMI_BOLD" />
+
+                <com.electreca.tech.components.CustomTextView
+                    android:id="@+id/tv_deactive_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/tvDeactiveProduct"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/dimen_60px"
+                    app:myFont="@string/REGULAR" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

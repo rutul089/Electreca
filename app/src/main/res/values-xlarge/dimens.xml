@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nav_drawer_width">400dp</dimen>
+    <dimen name="navDrawer_header_height">225dp</dimen>
+    <dimen name="header">56dp</dimen>
+    <dimen name="search_view">@dimen/_20sdp</dimen>
+    <dimen name="search_image_view">@dimen/_10sdp</dimen>
+    <dimen name="height_tab_layout">@dimen/_25sdp</dimen>
+    <dimen name="dimen_1">@dimen/_1sdp</dimen>
+    <dimen name="dimen_2">@dimen/_2sdp</dimen>
+    <dimen name="dimen_3">@dimen/_3sdp</dimen>
+    <dimen name="dimen_4">@dimen/_4sdp</dimen>
+    <dimen name="dimen_5">@dimen/_5sdp</dimen>
+    <dimen name="dimen_7">@dimen/_7sdp</dimen>
+    <dimen name="dimen_8">@dimen/_4sdp</dimen>
+    <dimen name="dimen_10">@dimen/_10sdp</dimen>
+    <dimen name="dimen_12">@dimen/_12sdp</dimen>
+    <dimen name="dimen_13">@dimen/_13sdp</dimen>
+    <dimen name="dimen_14">@dimen/_14sdp</dimen>
+    <dimen name="dimen_15">@dimen/_15sdp</dimen>
+    <dimen name="dimen_16">@dimen/_16sdp</dimen>
+    <dimen name="dimen_17">@dimen/_17sdp</dimen>
+    <dimen name="dimen_18">@dimen/_18sdp</dimen>
+    <dimen name="dimen_19">@dimen/_19sdp</dimen>
+    <dimen name="dimen_20">@dimen/_20sdp</dimen>
+    <dimen name="dimen_22">@dimen/_22sdp</dimen>
+    <dimen name="dimen_24">@dimen/_24sdp</dimen>
+    <dimen name="dimen_25">@dimen/_25sdp</dimen>
+    <dimen name="dimen_26">@dimen/_26sdp</dimen>
+    <dimen name="dimen_28">@dimen/_28sdp</dimen>
+    <dimen name="dimen_30">@dimen/_30sdp</dimen>
+    <dimen name="dimen_32">@dimen/_32sdp</dimen>
+    <dimen name="dimen_34">@dimen/_34sdp</dimen>
+    <dimen name="dimen_35">@dimen/_35sdp</dimen>
+    <dimen name="dimen_40">@dimen/_40sdp</dimen>
+    <dimen name="dimen_45">@dimen/_45sdp</dimen>
+    <dimen name="dimen_50">@dimen/_50sdp</dimen>
+
+    <!--specific height-->
+    <dimen name="height_1px">0.66dp</dimen>         <!--2.64px-->
+    <dimen name="height_70px">46.25dp</dimen>       <!--185px-->
+    <dimen name="height_90px">59.5dp</dimen>        <!--238px-->
+    <dimen name="height_110px">72.5dp</dimen>       <!--290px-->
+    <dimen name="height_150px">99dp</dimen>         <!--396px-->
+    <dimen name="height_180px">119dp</dimen>        <!--475px-->
+    <dimen name="height_270px">178dp</dimen>        <!--713px-->
+    <dimen name="height_300px">198dp</dimen>        <!--792px-->
+    <dimen name="height_360px">238dp</dimen>
+
+    <dimen name="dimen_10px">5.20sp</dimen>         <!--26 px-->
+    <dimen name="dimen_20px">10.6sp</dimen>         <!--53 px-->
+    <dimen name="dimen_30px">15.8sp</dimen>         <!--79 px-->
+    <dimen name="dimen_36px">19sp</dimen>           <!--95 px-->
+    <dimen name="dimen_39px">20.6sp</dimen>         <!--103px-->
+    <dimen name="dimen_40px">21.2sp</dimen>         <!--106px-->
+    <dimen name="dimen_42px">22.2sp</dimen>         <!--111px-->
+    <dimen name="dimen_48px">25.4sp</dimen>         <!--127px-->
+    <dimen name="dimen_50px">26.4sp</dimen>         <!--132px-->
+    <dimen name="dimen_54px">28.6sp</dimen>         <!--143px-->
+    <dimen name="dimen_60px">31.8sp</dimen>         <!--159px-->
+    <dimen name="dimen_64px">33.8sp</dimen>         <!--169px-->
+    <dimen name="dimen_66px">34.8sp</dimen>         <!--174px-->
+    <dimen name="dimen_70px">37sp</dimen>           <!--185px-->
+    <dimen name="dimen_72px">38sp</dimen>           <!--190px-->
+    <dimen name="dimen_75px">39.6sp</dimen>         <!--198px-->
+    <dimen name="dimen_90px">47.6sp</dimen>         <!--238px-->
+    <dimen name="dimen_150px">79sp</dimen>          <!--396opx-->
+    <dimen name="dimen_160px">84sp</dimen>          <!--422px-->
+    <dimen name="dimen_170px">89.8sp</dimen>        <!--449px-->
+    <dimen name="dimen_180px">95sp</dimen>          <!--475px-->
+
+    <dimen name="nav_header_height">@dimen/_160sdp</dimen>
+
+    <dimen name="dimen_nav_menu_text">25sp</dimen>
+
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="start"
+        android:padding="@dimen/dimen_5"
+        android:text="SOLAR ROOFTOP"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dimen_64px"
+        app:myFont="@string/BOLD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_name_tittle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="start"
+            android:padding="@dimen/dimen_5"
+            android:text="Name :"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_54px"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:gravity="start"
+            android:padding="@dimen/dimen_5"
+            android:text="CHC Hospital"
+            android:textColor="@color/text"
+            android:textSize="@dimen/dimen_54px"
+            app:myFont="@string/REGULAR" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/vi_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_location_tittle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="start"
+            android:padding="@dimen/dimen_5"
+            android:text="Location :"
+            android:textColor="@color/secondary_text"
+            android:textSize="@dimen/dimen_54px"
+            app:myFont="@string/REGULAR" />
+
+        <com.electreca.tech.components.CustomTextView
+            android:id="@+id/tv_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"
+            android:gravity="start"
+            android:padding="@dimen/dimen_5"
+            android:text="Betul"
+            android:textColor="@color/text"
+            android:textSize="@dimen/dimen_54px"
+            app:myFont="@string/REGULAR" />
+    </LinearLayout>
+
+</LinearLayout>

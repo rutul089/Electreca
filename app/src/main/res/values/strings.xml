@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Electreca</string>
+
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <!-- Login Screen -->
+    <string name="tv_welcome">Welcome Back</string>
+    <string name="tv_welcome_note">Login to continue using Electreca</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_pwd">Password</string>
+    <string name="tv_forgot_pwd">Forgot Password?</string>
+    <string name="tv_login">Log In</string>
+    <string name="tv_terms">Terms of Service</string>
+    <!-- Product List -->
+    <string name="tv_product_name">Product Name :</string>
+    <string name="tv_installed_date">Installed Date :</string>
+    <string name="tv_product_id">Product ID :</string>
+    <string name="tv_installed_by">Installed By :</string>
+    <string name="tv_address">Address :</string>
+    <string name="tv_status">Status :</string>
+    <string name="btn_product_history">Product History ></string>
+    <!-- About us -->
+    <string name="tvAboutUs">About Us</string>
+    <string name="tvContactUs">Connect with Us</string>
+    <string name="tvWebsiteLink">google.com</string>
+    <string name="tvFeedback">admin@admin.com</string>
+    <string name="tvMobile">+3124491239</string>
+    <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum non ex in gravida. Maecenas.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a nisi et orci auctor eleifend. Ut aliquam tincidunt mauris, sed ultricies risus dictum aliquet. Nullam tristique ullamcorper odio molestie tempor. Nulla urna magna, dictum sed justo vitae, dapibus gravida massa. Morbi pharetra dapibus nibh, nec aliquet sapien auctor ac. Proin aliquet hendrerit porttitor. Pellentesque id tincidunt tortor, et mattis leo. Nullam convallis eget eros ut interdum. Pellentesque habitant turpis egestas.</string>
+    <!-- Statistics -->
+    <string name="tvTotalProduct">Total Products</string>
+    <string name="tvActiveProduct">Active\nProducts</string>
+    <string name="tvDeactiveProduct">Deactivated\nProducts</string>
+    <!-- Change Password -->
+    <string name="newPWd">New Password</string>
+    <string name="conformPwd">Conform Password</string>
+    <string name="btn_updatePWd">Update Password</string>
+    <!-- Profile -->
+    <string name="tvYourName">Your Name</string>
+    <string name="tvEmailID">E-mail ID</string>
+    <string name="tvPhone">Phone</string>
+    <string name="tvDesignation">Designation</string>
+    <string name="tvResetPwd">Reset Password ></string>
+    <string name="tvPassword">Password </string>
+    <string name="btn_save">Save</string>
+    <!-- Signup -->
+    <string name="hintName">Name</string>
+    <string name="hintPhoneNumber">Phone number</string>
+    <string name="btn_signup">Sign up</string>
+    <!-- Add Product -->
+    <string name="hintProjectName">Project Name</string>
+    <string name="hintLocationName">Location Name</string>
+    <string name="hintProductId">Product ID</string>
+    <string name="hintCategory">Category</string>
+    <string name="hintCity">City / Village</string>
+    <string name="hintState">State</string>
+    <string name="hintLocation">Location</string>
+    <string name="hintNotes">Notes</string>
+    <string name="btn_add_location">Add Location</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

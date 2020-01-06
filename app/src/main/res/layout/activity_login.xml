@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_22"
+        android:text="@string/tv_welcome"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/dimen_90px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline1"
+        app:myFont="@string/SEMI_BOLD" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_welcome_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_welcome_note"
+        android:textColor="@color/text"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="@+id/tv_welcome"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+        app:myFont="@string/LIGHT" />
+
+    <com.electreca.tech.components.CustomEditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_150px"
+        android:layout_margin="@dimen/dimen_22"
+        android:background="@drawable/gray_stroke"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="@dimen/dimen_15"
+        android:hint="@string/hint_email"
+        android:paddingStart="@dimen/dimen_12"
+        android:paddingEnd="@dimen/dimen_5"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/text"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:myFont="@string/LIGHT" />
+
+    <com.electreca.tech.components.CustomEditText
+        android:id="@+id/et_pwd"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_150px"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@drawable/gray_stroke"
+        android:drawableStart="@drawable/ic_pwd"
+        android:drawablePadding="@dimen/dimen_15"
+        android:hint="@string/hint_pwd"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/dimen_12"
+        android:paddingEnd="@dimen/dimen_5"
+        android:textColor="@color/primary_text"
+        android:textColorHint="@color/text"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_email"
+        app:myFont="@string/LIGHT" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_forgot_pwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:text="@string/tv_forgot_pwd"
+        android:textColor="@color/text"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="@+id/et_pwd"
+        app:layout_constraintTop_toBottomOf="@+id/et_pwd"
+        app:myFont="@string/LIGHT" />
+
+    <com.electreca.tech.components.CustomButton
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/height_150px"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@drawable/blue_rounded_bg"
+        android:text="@string/tv_login"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/tv_forgot_pwd"
+        app:myFont="@string/MEDIUM" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tv_terms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_terms"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/dimen_64px"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:myFont="@string/MEDIUM" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

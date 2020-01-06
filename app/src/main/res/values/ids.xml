@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Font Identifiers-->
+    <string name="BOLD">BOLD</string>
+    <string name="LIGHT">LIGHT</string>
+    <string name="MEDIUM">MEDIUM</string>
+    <string name="REGULAR">REGULAR</string>
+    <string name="SEMI_BOLD">SEMIBOLD</string>
+    <string name="THIN">THIN</string>
+    <string name="google_api_keys">AIzaSyClvUdJETQvNCqfKKPc2SBdxitJWZPaJgs</string>
+    <!-- Font path -->
+    <string name="FONT_BOLD">fonts/bold.otf</string>
+    <string name="FONT_LIGHT">fonts/light.otf</string>
+    <string name="FONT_MEDIUM">fonts/medium.otf</string>
+    <string name="FONT_REGULAR">fonts/regular.otf</string>
+    <string name="FONT_SEMI_BOLD">fonts/semibold.otf</string>
+    <string name="FONT_THIN">fonts/thin.otf</string>
+    <!-- -->
+    <string name="PREFS_LOGGED_IN">prefs_logged_in</string>
+    <string name="PREFS_LOGGED_IN_USER_DETAILS">prefs_logged_in_user_details</string>
+    <string name="PREFS_LOGGED_IN_USER">prefs_logged_in_user</string>
+</resources>

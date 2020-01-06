@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ProfileActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/header" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_15">
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_24"
+                android:text="@string/tvYourName"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:enabled="false"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:text="Jacqueline Nelson"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/tvEmailID"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_name"
+                app:myFont="@string/REGULAR" />
+
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:enabled="false"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:text="admin@admin.com"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmail"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/tvPhone"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_email"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_phone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:enabled="false"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:text="+156 123 1234232"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tvPhone"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvDesignation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/tvDesignation"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_phone"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_designation"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:enabled="false"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:text="Admin"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tvDesignation"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvResetPwd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/tvPassword"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/et_designation"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomTextView
+                android:id="@+id/tvResetPassword"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dimen_8"
+                android:paddingEnd="@dimen/dimen_8"
+                android:text="@string/tvResetPwd"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tvResetPwd"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomButton
+                android:id="@+id/btn_save"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@drawable/blue_rounded_bg"
+                android:text="@string/btn_save"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/dimen_64px"
+                app:layout_constraintEnd_toEndOf="@+id/tv_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tvResetPassword"
+                app:myFont="@string/MEDIUM" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</LinearLayout>

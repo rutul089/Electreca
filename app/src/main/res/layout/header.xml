@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlHeaderContainer"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:clickable="true"
+    android:elevation="@dimen/dimen_4"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/ivHeaderBg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorPrimary"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:padding="@dimen/dimen_8"
+        android:scaleType="center"
+        android:tint="@color/colorWhite"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/ivEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:padding="@dimen/dimen_8"
+        android:scaleType="fitCenter"
+        android:tint="@color/colorWhite"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivHeaderBg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_edit"
+        tools:visibility="visible" />
+
+    <com.electreca.tech.components.CustomTextView
+        android:id="@+id/tvAppLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Header Tittle"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/dimen_90px"
+        app:layout_constraintBottom_toBottomOf="@+id/ivHeaderBg"
+        app:layout_constraintEnd_toEndOf="@+id/ivHeaderBg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:myFont="@string/FONT_SEMI_BOLD" />
+</androidx.constraintlayout.widget.ConstraintLayout>
