@@ -13,7 +13,6 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
@@ -35,7 +34,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.ShowLocationActivity"></activity>
+        <activity android:name=".activity.ProductDetailActivity">
+
+        </activity>
+        <activity android:name=".activity.ShowLocationActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -69,6 +71,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.DashboardActivity" />
+
     </application>
 
 </manifest>

@@ -37,6 +37,9 @@ public class AddProductRequestModel {
     @SerializedName("installedBy")
     @Expose
     private String installedBy;
+    @SerializedName("installDate")
+    @Expose
+    private String installDate;
     @SerializedName("empName")
     @Expose
     private String empName;
@@ -47,7 +50,7 @@ public class AddProductRequestModel {
     @Expose
     private String projectName;
 
-    public AddProductRequestModel(String projectName, String category, String city, String village, String state, String serviceDate, String name, Integer serviceCount, Double longitude, Double latitude, Boolean isActive, String installedBy, String empName, String notedata) {
+    public AddProductRequestModel(String projectName, String category, String city, String village, String state, String serviceDate, String name, Integer serviceCount, Double longitude, Double latitude, Boolean isActive, String installedBy, String empName, String notedata, String installDate) {
         this.projectName = projectName;
         this.category = category;
         this.city = city;
@@ -62,6 +65,17 @@ public class AddProductRequestModel {
         this.installedBy = installedBy;
         this.empName = empName;
         this.notedata = notedata;
+        this.installDate = installDate;
+    }
+
+
+
+    public String getInstallDate() {
+        return installDate;
+    }
+
+    public void setInstallDate(String installDate) {
+        this.installDate = installDate;
     }
 
     public String getProjectName() {

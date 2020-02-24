@@ -12,4 +12,6 @@
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorActive">#dd3e3e</color>
     <color name="colorInActive">#A0A0A0</color>
+    <color name="color_active">#c5aa00</color>
+    <color name="color_InActive">#f33d00</color>
 </resources>

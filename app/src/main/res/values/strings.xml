@@ -57,4 +57,6 @@
     <string name="hintNotes">Notes</string>
     <string name="btn_add_location">Add Location</string>
     <string name="title_activity_maps">Map</string>
+    <!-- Search View -->
+    <string name="hintSearch">Search</string>
 </resources>

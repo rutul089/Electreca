@@ -1,8 +1,12 @@
 package com.electreca.tech.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +23,7 @@ public class DashboardActivity extends BaseActivity implements DashboardAdapter.
     private float height, width;
     private GridLayoutManager lLayout;
     private DashboardAdapter dashboardAdapter;
+    private ImageButton ivEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,17 +35,29 @@ public class DashboardActivity extends BaseActivity implements DashboardAdapter.
     public void initComponents() {
         rv_dashboard = findViewById(R.id.rv_dashboard);
         rl_main = findViewById(R.id.rl_main);
+        ivEdit = findViewById(R.id.ivEdit);
     }
 
     @Override
     public void setListener() {
-
+        ivEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+                builder.setTitle(getString(R.string.app_name));
+                builder.setMessage("You are about to exit your account.Are you sure?");
+                builder.setPositiveButton("Yes", (dialog, which) -> logoutFromApp(21));
+                builder.setNegativeButton("No", (dialog, which) -> dialog.dismiss());
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+        });
 
     }
 
     @Override
     public void prepareViews() {
-        setHeaderView(0, false, "Dashboard", R.color.colorWhite, false, 0);
+        setHeaderView(0, false, "Dashboard", R.color.colorWhite, true, R.drawable.ic_logout);
         //--
         dashboardAdapter = new DashboardAdapter(mContext, getDashBoard(), this);
         rv_dashboard.setAdapter(dashboardAdapter);
@@ -91,7 +108,8 @@ public class DashboardActivity extends BaseActivity implements DashboardAdapter.
             case 6:
                 startDesireIntent(ProfileActivity.class, mContext, false, 0, null);
                 break;
-            case 7:  startDesireIntent(ShowProductActivity.class, mContext, false, 0, null);
+            case 7:
+                startDesireIntent(ShowProductActivity.class, mContext, false, 0, null);
                 break;
         }
     }

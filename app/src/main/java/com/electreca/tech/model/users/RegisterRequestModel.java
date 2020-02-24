@@ -16,12 +16,24 @@ public class RegisterRequestModel {
     @SerializedName("userRole")
     @Expose
     private int userRole;
+    @SerializedName("phoneNumber")
+    @Expose
+    private String phoneNumber;
 
-    public RegisterRequestModel(String userName, String userEmail, String userPassword, int userRole) {
+    public RegisterRequestModel(String userName, String userEmail, String userPassword, int userRole, String phoneNumber) {
         this.userName = userName;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
         this.userRole = userRole;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getUserName() {

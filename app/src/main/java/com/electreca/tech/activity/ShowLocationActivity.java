@@ -87,8 +87,8 @@ public class ShowLocationActivity extends BaseActivity implements View.OnClickLi
         Gson g = new Gson();
         ProductList productData = g.fromJson(marker.getSnippet(), ProductList.class);
         mBundle = new Bundle();
-//        mBundle.putParcelable(Constants.KEY_PRODUCT_LIST, productData);
-//        startDesireIntent(ProductDetail.class, mContext, false, 0, mBundle);
+        mBundle.putParcelable(Constants.KEY_PRODUCT_LIST, productData);
+        startDesireIntent(ProductDetailActivity.class, mContext, false, 0, mBundle);
     }
 
     @Override
@@ -113,19 +113,19 @@ public class ShowLocationActivity extends BaseActivity implements View.OnClickLi
 
     private void callGetProduct() {
         if (HelperMethods.checkNetwork(mContext)) {
-//            showDialog();
+            showDialog();
             ElectrecaApplication locationApplication = HelperMethods.getAppClassInstance(mContext);
             ApiInterface apiInterface = locationApplication.getApiInterface();
             Call<ProductResponseDataModel> call = apiInterface.fetchProduct(getHeaderValue(0));
             call.enqueue(new Callback<ProductResponseDataModel>() {
                 @Override
                 public void onResponse(Call<ProductResponseDataModel> call, Response<ProductResponseDataModel> response) {
-//                    dismissDialog();
+                    dismissDialog();
                     if (response.isSuccessful()) {
                         ProductResponseDataModel responseDataModel = response.body();
                         if (responseDataModel != null) {
                             if (responseDataModel.isIsSuccess()) {
-//                                logoutFromApp(responseDataModel.getErrorCode());
+                                logoutFromApp(responseDataModel.getErrorCode());
                                 List<ProductList> productLists = new ArrayList<>();
                                 productLists = responseDataModel.getData().getProduct();
                                 if (productLists != null && !productLists.isEmpty()) {
@@ -140,7 +140,7 @@ public class ShowLocationActivity extends BaseActivity implements View.OnClickLi
 
                 @Override
                 public void onFailure(Call<ProductResponseDataModel> call, Throwable t) {
-//                    dismissDialog();
+                    dismissDialog();
                     HelperMethods.showGeneralSWWToast(getApplicationContext());
                     t.printStackTrace();
                 }

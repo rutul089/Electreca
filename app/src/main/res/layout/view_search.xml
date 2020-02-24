@@ -22,7 +22,8 @@
         android:background="@android:color/transparent"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:text="Lorem Ipsum"
+        android:hint="@string/hintSearch"
+        android:textColorHint="@color/secondary_text"
         android:textColor="@color/text"
         android:textSize="@dimen/dimen_64px"
         app:myFont="@string/REGULAR" />

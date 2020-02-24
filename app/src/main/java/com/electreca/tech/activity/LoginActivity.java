@@ -76,8 +76,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                                 ApplicationSharedPreferences.saveObject(getString(R.string.PREFS_LOGGED_IN_USER_DETAILS), loginResponseDataModel, mContext);
                                 startDesireIntent(DashboardActivity.class, mContext, false, 0, null);
                                 finish();
+                            }else {
+                                HelperMethods.showToast(loginResponseDataModel.getMessage(),mContext);
                             }
                         }
+                    }else {
+                        HelperMethods.showGeneralSWWToast(mContext);
                     }
                 }
 

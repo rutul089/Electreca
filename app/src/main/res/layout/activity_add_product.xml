@@ -22,6 +22,13 @@
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/dimen_15">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
             <com.electreca.tech.components.CustomTextView
                 android:id="@+id/tvProjectName"
                 android:layout_width="0dp"
@@ -200,18 +207,40 @@
                 android:id="@+id/tvLocation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_15"
                 android:text="@string/hintLocation"
+                android:layout_marginTop="@dimen/dimen_15"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/dimen_66px"
                 app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/tvProjectName"
                 app:layout_constraintTop_toBottomOf="@+id/et_state"
                 app:myFont="@string/REGULAR" />
 
             <com.electreca.tech.components.CustomEditText
-                android:id="@+id/et_location"
+                android:id="@+id/et_lat"
                 android:layout_width="0dp"
+                android:layout_height="@dimen/height_150px"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/gray_stroke"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_5"
+                android:singleLine="true"
+                android:hint="lat"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/dimen_66px"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintTop_toBottomOf="@+id/tvLocation"
+                app:myFont="@string/REGULAR" />
+
+            <com.electreca.tech.components.CustomEditText
+                android:id="@+id/et_lng"
+                android:hint="lng"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/dimen_5"
                 android:layout_height="@dimen/height_150px"
                 android:layout_marginTop="@dimen/dimen_10"
                 android:background="@drawable/gray_stroke"
@@ -221,8 +250,8 @@
                 android:singleLine="true"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/dimen_66px"
-                app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
-                app:layout_constraintStart_toStartOf="@+id/tvProjectName"
+                app:layout_constraintEnd_toEndOf="@+id/et_state"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toBottomOf="@+id/tvLocation"
                 app:myFont="@string/REGULAR" />
 
@@ -236,7 +265,7 @@
                 android:textSize="@dimen/dimen_66px"
                 app:layout_constraintEnd_toEndOf="@+id/tvProjectName"
                 app:layout_constraintStart_toStartOf="@+id/tvProjectName"
-                app:layout_constraintTop_toBottomOf="@+id/et_location"
+                app:layout_constraintTop_toBottomOf="@+id/et_lat"
                 app:myFont="@string/REGULAR" />
 
             <com.electreca.tech.components.CustomEditText
@@ -245,13 +274,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10"
                 android:background="@drawable/gray_stroke"
+                android:gravity="top"
                 android:inputType="textMultiLine"
                 android:lineSpacingExtra="@dimen/dimen_2"
                 android:lines="3"
                 android:maxLines="4"
-                android:gravity="top"
-                android:paddingTop="@dimen/dimen_3"
                 android:paddingStart="@dimen/dimen_12"
+                android:paddingTop="@dimen/dimen_3"
                 android:paddingEnd="@dimen/dimen_5"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/dimen_66px"

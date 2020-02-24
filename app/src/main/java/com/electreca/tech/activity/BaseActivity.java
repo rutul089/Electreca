@@ -108,6 +108,23 @@ public abstract class BaseActivity extends ActivityManagePermission {
 
     abstract public void prepareViews();
 
+
+
+    public void flushPreferences() {
+        ApplicationSharedPreferences.saveObject(getString(R.string.PREFS_LOGGED_IN_USER_DETAILS), null, mContext);
+    }
+
+    public void logoutFromApp(int responseCode) {
+        if(responseCode == 21 || responseCode == 20){
+            if (isUserLoggedIn()){
+                ApplicationSharedPreferences.set(getResources().getString(R.string.PREFS_LOGGED_IN), false, mContext);
+                ApplicationSharedPreferences.saveObject(getString(R.string.PREFS_LOGGED_IN_USER_DETAILS), null, mContext);
+                flushPreferences();
+                startDesireIntent(LoginActivity.class, mContext, true, 0, null);
+                finish();
+            }
+        }
+    }
     /**
      * Function for starting new activity
      *
