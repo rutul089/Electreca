@@ -16,7 +16,17 @@ public class UserdataModel {
     @SerializedName("userRole")
     @Expose
     private int userRole;
+    @SerializedName("phoneNumber")
+    @Expose
+    private int phoneNumber;
 
+    public int getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
     public int getUserID() {
         return userID;

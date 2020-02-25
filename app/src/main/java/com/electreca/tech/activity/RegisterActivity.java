@@ -136,7 +136,6 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
             return;
         }
 
-
         if (HelperMethods.checkNetwork(mContext)) {
             showDialog();
             ElectrecaApplication locationApplication = HelperMethods.getAppClassInstance(mContext);

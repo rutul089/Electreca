@@ -11,6 +11,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -151,5 +152,16 @@ public class HelperMethods {
             return "";
         }
     }
+
+
+    public static String getUserRole(Context context, int value) {
+        HashMap<Integer, String> hashMap = new HashMap<>();
+        hashMap.put(0, "N/A");
+        hashMap.put(1, "Admin");
+        hashMap.put(2, "Installer");
+        hashMap.put(3, "Technician");
+        return hashMap.get(value);
+    }
+
 
 }
