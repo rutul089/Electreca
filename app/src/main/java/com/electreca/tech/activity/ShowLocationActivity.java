@@ -185,7 +185,7 @@ public class ShowLocationActivity extends BaseActivity implements View.OnClickLi
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         googleMap.setMyLocationEnabled(false);
         googleMap.getUiSettings().setRotateGesturesEnabled(false);
-        googleMap.setMinZoomPreference(5);
+        googleMap.setMinZoomPreference(1);
 //        googleMap.setMaxZoomPreference(18);
         googleMap.getUiSettings().setZoomGesturesEnabled(true);
         googleMap.getUiSettings().setZoomControlsEnabled(false);

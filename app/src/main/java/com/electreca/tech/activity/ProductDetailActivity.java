@@ -1,13 +1,25 @@
 package com.electreca.tech.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Looper;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.electreca.tech.ElectrecaApplication;
 import com.electreca.tech.R;
@@ -22,7 +34,17 @@ import com.electreca.tech.model.products.ProductList;
 import com.electreca.tech.model.products.UpdateProductModel;
 import com.electreca.tech.utils.Constants;
 import com.electreca.tech.utils.HelperMethods;
+import com.electreca.tech.utils.runtimepermissionhelper.PermissionResult;
+import com.electreca.tech.utils.runtimepermissionhelper.PermissionUtils;
 import com.electreca.tech.webservice.ApiInterface;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +65,9 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
     private boolean buttonEnable = false;
     String currentDate;
     private int id;
+    public FusedLocationProviderClient mFusedLocationClient;
+    int PERMISSION_ID = 44;
+    double lat = 0.0, lng = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +86,9 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
         tvInstalledDate = findViewById(R.id.tvInstalledDate);
         tv_totalCount = findViewById(R.id.tv_totalCount);
         btn_update = findViewById(R.id.btn_update);
+        //--
+
+
     }
 
     @Override
@@ -75,8 +103,12 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
         setHeaderView(0, true, "Product Detail", R.color.colorWhite, false, R.drawable.ic_edit);
         //--
         callGetProductDetailFromId(productList.getProductID());
-
-
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        getLastLocation();
+//        float result[] = new float[10];
+//        Location.distanceBetween(10.850516, 76.27108, 37.4219846, -122.084044, result);
+//        Log.d(TAG + "distance", calculateDistance(10.850516, 76.27108, 37.4219846, -122.084044) + "");
+//        Log.d(TAG + "distance", result[0]/1000 + "");
     }
 
 
@@ -98,17 +130,56 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
             String lastDate = HelperMethods.strToDate(productList.getServiceDate(), "yyyy-MM-dd");
             String _currentDate = HelperMethods.strToDate(currentDate, "yyyy-MM-dd");
             buttonEnable = HelperMethods.dayDifference(_currentDate, lastDate) >= 1;
-            if (serviceCount == 0) {
-                btn_update.setEnabled(true);
-                btn_update.setBackgroundResource(R.color.colorPrimary);
-            } else {
-                btn_update.setBackgroundResource(buttonEnable ? R.color.colorPrimary : R.color.colorInActive);
-                btn_update.setEnabled(buttonEnable);
-            }
+//            if (serviceCount == 0) {
+//                btn_update.setEnabled(true);
+//                btn_update.setBackgroundResource(R.color.colorPrimary);
+//            } else {
+//                btn_update.setBackgroundResource(buttonEnable ? R.color.colorPrimary : R.color.colorInActive);
+//                btn_update.setEnabled(buttonEnable);
+//            }
             Log.i(TAG, buttonEnable + "");
             id = productList.getProductID();
             tvInstalledDate.setText(HelperMethods.strToDate(productList.getInstallDate(), "dd MMM YYYY"));
+            float result[] = new float[10];
+            Location.distanceBetween(lat, lng, productList.getLatitude(), productList.getLongitude(), result);
+            if (lat != 0.0 && lng != 0.0) {
+                Log.d(TAG, "distance" + result[0]);
+                if (result[0] <= 200) {
+                    if (serviceCount == 0) {
+                        btn_update.setEnabled(true);
+                        btn_update.setBackgroundResource(R.color.colorPrimary);
+                    } else {
+                        btn_update.setBackgroundResource(buttonEnable ? R.color.colorPrimary : R.color.colorInActive);
+                        btn_update.setEnabled(buttonEnable);
+                    }
+                } else {
+                    btn_update.setBackgroundResource(R.color.colorInActive);
+                    btn_update.setEnabled(false);
+                }
+            }
         }
+    }
+
+    //Here getting distance in kilometers (km)
+    private double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+        double theta = lon1 - lon2;
+        double dist = Math.sin(deg2rad(lat1))
+                * Math.sin(deg2rad(lat2))
+                + Math.cos(deg2rad(lat1))
+                * Math.cos(deg2rad(lat2))
+                * Math.cos(deg2rad(theta));
+        dist = Math.acos(dist);
+        dist = rad2deg(dist);
+        dist = dist * 60 * 1.1515;
+        return (dist);
+    }
+
+    private double deg2rad(double deg) {
+        return (deg * Math.PI / 180.0);
+    }
+
+    private double rad2deg(double rad) {
+        return (rad * 180.0 / Math.PI);
     }
 
     @Override
@@ -195,6 +266,99 @@ public class ProductDetailActivity extends BaseActivity implements View.OnClickL
             HelperMethods.showGeneralNICToast(mContext);
         }
     }
+
+    private boolean checkPermissions() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+        return false;
+    }
+
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(
+                this,
+                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
+                PERMISSION_ID
+        );
+    }
+
+    private boolean isLocationEnabled() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+                LocationManager.NETWORK_PROVIDER
+        );
+    }
+
+    private void getLastLocation() {
+        if (checkPermissions()) {
+            if (isLocationEnabled()) {
+                mFusedLocationClient.getLastLocation().addOnCompleteListener(
+                        new OnCompleteListener<Location>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Location> task) {
+                                Location location = task.getResult();
+                                if (location == null) {
+                                    requestNewLocationData();
+                                } else {
+                                    lat = location.getLatitude();
+                                    lng = location.getLongitude();
+                                    Log.d(TAG, location.getLatitude() + " " + location.getLongitude());
+                                }
+                            }
+                        }
+                );
+            } else {
+                Toast.makeText(this, "Turn on location", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(intent);
+            }
+        } else {
+            requestPermissions();
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getLastLocation();
+    }
+
+    private void requestNewLocationData() {
+        LocationRequest mLocationRequest = new LocationRequest();
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(0);
+        mLocationRequest.setFastestInterval(0);
+        mLocationRequest.setNumUpdates(1);
+
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        mFusedLocationClient.requestLocationUpdates(
+                mLocationRequest, mLocationCallback,
+                Looper.myLooper()
+        );
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_ID) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLastLocation();
+            }
+        }
+    }
+
+    private LocationCallback mLocationCallback = new LocationCallback() {
+        @Override
+        public void onLocationResult(LocationResult locationResult) {
+            Location mLastLocation = locationResult.getLastLocation();
+            if (mLastLocation != null) {
+                lat = mLastLocation.getLatitude();
+                lng = mLastLocation.getLongitude();
+            }
+        }
+    };
 
 
 }
