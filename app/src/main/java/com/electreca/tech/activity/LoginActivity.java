@@ -67,20 +67,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 @Override
                 public void onResponse(Call<LoginResponseDataModel> call, Response<LoginResponseDataModel> response) {
                     dismissDialog();
-                    if (response.isSuccessful()) {
-                        LoginResponseDataModel loginResponseDataModel = response.body();
-                        if (loginResponseDataModel != null) {
+                    LoginResponseDataModel loginResponseDataModel = response.body();
+                    if (loginResponseDataModel != null) {
+                        if (response.isSuccessful()) {
                             if (loginResponseDataModel.isIsSuccess()) {
 //                                logoutFromApp(loginResponseDataModel.getErrorCode());
                                 ApplicationSharedPreferences.set(getResources().getString(R.string.PREFS_LOGGED_IN), true, mContext);
                                 ApplicationSharedPreferences.saveObject(getString(R.string.PREFS_LOGGED_IN_USER_DETAILS), loginResponseDataModel, mContext);
                                 startDesireIntent(DashboardActivity.class, mContext, false, 0, null);
                                 finish();
-                            }else {
-                                HelperMethods.showToast(loginResponseDataModel.getMessage(),mContext);
+                            } else {
+                                HelperMethods.showToast(loginResponseDataModel.getMessage(), mContext);
                             }
+                        } else {
+                            HelperMethods.showToast(loginResponseDataModel.getMessage(), mContext);
                         }
-                    }else {
+                    } else {
                         HelperMethods.showGeneralSWWToast(mContext);
                     }
                 }

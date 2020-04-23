@@ -84,11 +84,14 @@ public class ShowLocationActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Gson g = new Gson();
-        ProductList productData = g.fromJson(marker.getSnippet(), ProductList.class);
-        mBundle = new Bundle();
-        mBundle.putParcelable(Constants.KEY_PRODUCT_LIST, productData);
-        startDesireIntent(ProductDetailActivity.class, mContext, false, 0, mBundle);
+        int role = getLoggedInUser().getData().getUserData().getUserRole();
+        if (role != 2) {
+            Gson g = new Gson();
+            ProductList productData = g.fromJson(marker.getSnippet(), ProductList.class);
+            mBundle = new Bundle();
+            mBundle.putParcelable(Constants.KEY_PRODUCT_LIST, productData);
+            startDesireIntent(ProductDetailActivity.class, mContext, false, 0, mBundle);
+        }
     }
 
     @Override

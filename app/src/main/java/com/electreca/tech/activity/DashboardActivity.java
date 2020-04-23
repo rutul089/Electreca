@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.electreca.tech.R;
 import com.electreca.tech.adapter.DashboardAdapter;
 import com.electreca.tech.model.DashboardReponseModel;
+import com.electreca.tech.utils.HelperLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class DashboardActivity extends BaseActivity implements DashboardAdapter.
     private GridLayoutManager lLayout;
     private DashboardAdapter dashboardAdapter;
     private ImageButton ivEdit;
+    private int role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,26 +61,37 @@ public class DashboardActivity extends BaseActivity implements DashboardAdapter.
     public void prepareViews() {
         setHeaderView(0, false, "Dashboard", R.color.colorWhite, true, R.drawable.ic_logout);
         //--
+        role = getLoggedInUser().getData().getUserData().getUserRole();
         dashboardAdapter = new DashboardAdapter(mContext, getDashBoard(), this);
         rv_dashboard.setAdapter(dashboardAdapter);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mContext, 2, GridLayoutManager.VERTICAL, false);
         rv_dashboard.setLayoutManager(gridLayoutManager);
 
+        //--
+        HelperLog.d(DashboardActivity.class.getName(), role + "");
+
     }
 
     private List<DashboardReponseModel> getDashBoard() {
         List<DashboardReponseModel> dashboardReponseModel = new ArrayList<>();
-        dashboardReponseModel.add(new DashboardReponseModel(0, R.drawable.ic_add_produts, "Add\nLocation"));
-        dashboardReponseModel.add(new DashboardReponseModel(1, R.drawable.ic_show_location, "Show\nProducts"));
-        dashboardReponseModel.add(new DashboardReponseModel(2, R.drawable.ic_add_user, "Add\nUser"));
-        dashboardReponseModel.add(new DashboardReponseModel(3, R.drawable.ic_list_user, "User\nList"));
+        if (role == 1 || role == 2) {
+            dashboardReponseModel.add(new DashboardReponseModel(0, R.drawable.ic_add_produts, "Add\nLocation"));
+        }
+        dashboardReponseModel.add(new DashboardReponseModel(1, R.drawable.ic_show_location, "Show\nLocations"));
+        if (role == 1) {
+            dashboardReponseModel.add(new DashboardReponseModel(2, R.drawable.ic_add_user, "Add\nUser"));
+            dashboardReponseModel.add(new DashboardReponseModel(3, R.drawable.ic_list_user, "User\nList"));
+        }
         dashboardReponseModel.add(new DashboardReponseModel(4, R.drawable.ic_aboutus, "About US"));
         dashboardReponseModel.add(new DashboardReponseModel(5, R.drawable.ic_statastics, "Statistics"));
         dashboardReponseModel.add(new DashboardReponseModel(6, R.drawable.ic_profile, "Profile"));
         dashboardReponseModel.add(new DashboardReponseModel(7, R.drawable.ic_show_location, "Show\nProducList"));
         return dashboardReponseModel;
     }
+    // Admin all 1
+    //  Installer only installing 2
+    // Technician 3
 
 
     @Override

@@ -1,11 +1,22 @@
 package com.electreca.tech.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,9 +33,18 @@ import com.electreca.tech.model.products.BaseResponse;
 import com.electreca.tech.utils.HelperMethods;
 import com.electreca.tech.webservice.ApiInterface;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,6 +64,10 @@ public class AddProductActivity extends BaseActivity implements View.OnClickList
             et_lng,
             et_notes;
     private CustomButton btn_add_device;
+    public FusedLocationProviderClient mFusedLocationClient;
+    int PERMISSION_ID = 44;
+    Geocoder geocoder;
+    List<Address> addresses;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +94,8 @@ public class AddProductActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void onResume() {
         super.onResume();
+        getLastLocation();
     }
-
 
     @Override
     public void setListener() {
@@ -104,6 +128,9 @@ public class AddProductActivity extends BaseActivity implements View.OnClickList
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp_category.setAdapter(adapter);
         //--
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        geocoder = new Geocoder(this, Locale.getDefault());
+        getLastLocation();
         /*
         Handler handler = new Handler();
         int i = 0;
@@ -121,6 +148,110 @@ public class AddProductActivity extends BaseActivity implements View.OnClickList
         }
 */
     }
+
+    private boolean checkPermissions() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            return true;
+        }
+        return false;
+    }
+
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(
+                this,
+                new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION},
+                PERMISSION_ID
+        );
+    }
+
+    private boolean isLocationEnabled() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
+                LocationManager.NETWORK_PROVIDER
+        );
+    }
+
+    private void getLastLocation() {
+        if (checkPermissions()) {
+            if (isLocationEnabled()) {
+                mFusedLocationClient.getLastLocation().addOnCompleteListener(
+                        new OnCompleteListener<Location>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Location> task) {
+                                Location location = task.getResult();
+                                if (location == null) {
+                                    requestNewLocationData();
+                                } else {
+                                    // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+                                    double latitude = location.getLatitude();
+                                    double longitude = location.getLongitude();
+                                    setLocation(latitude,longitude);
+
+
+                                    Log.d(TAG, location.toString());
+                                }
+                            }
+                        }
+                );
+            }
+        }
+    }
+
+    private void setLocation(double lat, double lng) {
+        et_lat.setEnabled(false);
+        et_lng.setEnabled(false);
+        et_lat.setText(lat+"");
+        et_lng.setText(lng+"");
+        try {
+            addresses = geocoder.getFromLocation(lat, lng, 1);
+            et_city.setText(addresses.get(0).getLocality());
+            et_state.setText(addresses.get(0).getAdminArea());
+        } catch (IOException e) {
+            e.printStackTrace();
+            et_lat.setEnabled(true);
+            et_lng.setEnabled(true);
+        }
+    }
+
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_ID) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLastLocation();
+            }
+        }
+    }
+
+    private void requestNewLocationData() {
+        LocationRequest mLocationRequest = new LocationRequest();
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(0);
+        mLocationRequest.setFastestInterval(0);
+        mLocationRequest.setNumUpdates(1);
+
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        mFusedLocationClient.requestLocationUpdates(
+                mLocationRequest, mLocationCallback,
+                Looper.myLooper()
+        );
+    }
+
+    private LocationCallback mLocationCallback = new LocationCallback() {
+        @Override
+        public void onLocationResult(LocationResult locationResult) {
+            Location mLastLocation = locationResult.getLastLocation();
+            if (mLastLocation != null) {
+                double latitude = mLastLocation.getLatitude();
+                double longitude = mLastLocation.getLongitude();
+                setLocation(latitude,longitude);
+                Log.d(TAG, mLastLocation.toString());
+            }
+        }
+    };
 
     @Override
     public void onClick(View v) {
@@ -171,8 +302,8 @@ public class AddProductActivity extends BaseActivity implements View.OnClickList
                             logoutFromApp(baseResponse.getErrorCode());
                             if (baseResponse.isIsSuccess()) {
                                 HelperMethods.showToast(baseResponse.getMessage(), mContext);
-                            }else {
-                                HelperMethods.showToast(baseResponse.getMessage(),mContext);
+                            } else {
+                                HelperMethods.showToast(baseResponse.getMessage(), mContext);
                             }
                         }
                     }
@@ -230,6 +361,7 @@ public class AddProductActivity extends BaseActivity implements View.OnClickList
         roleList.add(new UserRoleModel(4, "Home Light"));
         return roleList;
     }
+
 
     public List<AddProductRequestModel> addLocation() {
         ArrayList<AddProductRequestModel> roleList = new ArrayList<>();
